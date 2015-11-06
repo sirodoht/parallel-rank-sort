@@ -19,7 +19,7 @@ javac -Xdiags:verbose ParallelRankSort.java
 
 ```
 java SeqRankSort
-java ParallelRankSort 1000 4
+java ParallelRankSort 1000 4 true
 ```
 
 ### Experiment
