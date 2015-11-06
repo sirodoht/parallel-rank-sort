@@ -4,7 +4,7 @@
 
 `ParallelRankSort.java` uses command line arguments for problem size and number of threads to use. It divides the array to be sorted into equal* blocks, which are then divided to each thread. The work of each thread is to calculate the position of each element in the (`result`) array.
 
-* In case of remainder `Math.ceil` is invoked.
+*In case of remainder `Math.ceil` is invoked.*
 
 ## Use
 
