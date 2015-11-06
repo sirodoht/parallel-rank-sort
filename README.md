@@ -41,4 +41,4 @@ Also available by running `java ParallelRankSort` argument-less.
 
 ## License
 
-Code releases under the [MIT license](LICENSE).
+Code released under the [MIT license](LICENSE).
