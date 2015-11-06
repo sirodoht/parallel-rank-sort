@@ -2,7 +2,9 @@
 
 `SeqRankSort.java` is a C-like implementation of rank sort. Demonstrated with a sample reversed array of 10 integers.
 
-`ParallelRankSort.java` uses command line arguments for problem size and number of threads to use.
+`ParallelRankSort.java` uses command line arguments for problem size and number of threads to use. It divides the array to be sorted into equal* blocks, which are then divided to each thread. The work of each thread is to calculate the position of each element in the (`result`) array.
+
+* In case of remainder `Math.ceil` is invoked.
 
 ## Use
 
