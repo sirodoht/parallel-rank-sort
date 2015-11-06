@@ -15,6 +15,8 @@ javac -Xdiags:verbose SeqRankSort.java
 javac -Xdiags:verbose ParallelRankSort.java
 ```
 
+Tested with Java 8.
+
 ### Run
 
 ```sh
