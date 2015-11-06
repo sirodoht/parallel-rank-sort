@@ -10,14 +10,14 @@
 
 ### Compile
 
-```
+```sh
 javac -Xdiags:verbose SeqRankSort.java
 javac -Xdiags:verbose ParallelRankSort.java
 ```
 
 ### Run
 
-```
+```sh
 java SeqRankSort
 java ParallelRankSort 1000 4 true
 ```
@@ -32,7 +32,7 @@ Also available by running `java ParallelRankSort` argument-less.
 
 ### Experiment
 
-```
+```sh
 ./run_parallel.sh
 ```
 
