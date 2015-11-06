@@ -4,13 +4,14 @@ class ParallelRankSort {
 	public static void main(String[] args) {
 
 		// Invalid command line arguments
-		if (args.length != 2) {
+		if (args.length != 3) {
 			System.out.println("ParallelRankSort Use");
 			System.out.println("Command line arguments: <problem_size> <number_of_threads>");
 			System.out.println("<problem_size>: Number of elements of the array to be sorted.");
 			System.out.println("<number_of_threads>: Number of threads to be used in the parallelization.");
 			System.out.println("	0: uses the number of available processors as number of threads.");
-			System.out.println("e.g. `java ParallelRankSort 10000 8` which will run 8 threads for an array of 10000 elements.");
+			System.out.println("<random>: Boolean for the use of random data. Use `true` for true. Every other statement evaluates false.");
+			System.out.println("\ne.g. `java ParallelRankSort 10000 8 true` which will run 8 threads for an array of 10000 random elements.");
 			System.exit(0);
 		}
 
@@ -22,18 +23,23 @@ class ParallelRankSort {
 			threadNum = Runtime.getRuntime().availableProcessors();
 		}
 		System.out.println("Thread number: " + threadNum);
+		Boolean random = Boolean.valueOf(args[2]);
+		System.out.println("Random data: " + random);
 
 		// Initialize arrays
 		int[] readArray = new int[elemQuantity];
 		int[] resultArray = new int[elemQuantity];
 
+
 		// Create initial un-sorted array and print it
 		for(int i = 0; i < elemQuantity; i++) {
-			readArray[i] = elemQuantity - i;
-			resultArray[i] = 0;
-			if (i % 10 == 0) {
-				readArray[i] = 10;
+			if (random) {
+				Random rand = new Random();
+				readArray[i] = rand.nextInt(elemQuantity) + 1;
+			} else {
+				readArray[i] = elemQuantity - i;
 			}
+			resultArray[i] = 0;
 		}
 
 		// // Print initial array
