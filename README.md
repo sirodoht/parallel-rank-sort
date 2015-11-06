@@ -23,6 +23,7 @@ java ParallelRankSort 1000 4 true
 ```
 
 `ParallelRankSort` arguments:
+
 1. `1000` problem size, that is the number of elements of the array.
 1. `4` problem size, that is the number of elements of the array.
 1. `true` random boolean, true means random array elements while every other statement evaluates false.
