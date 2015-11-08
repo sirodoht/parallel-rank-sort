@@ -1,7 +1,5 @@
-class SeqRankSort
-{
-	public static void main(String[] args)
-	{
+class SeqRankSort {
+	public static void main(String[] args) {
     final int N = 10;
     int[] readArray = new int[N];
     int[] resultArray = new int[N];
