@@ -1,5 +1,4 @@
-	class ParallelRankThread extends Thread {
-
+class ParallelRankThread extends Thread {
 	private int[] readArray;
 	private int[] resultArray;
 	private int threadNum;
@@ -28,19 +27,19 @@
 
 	@Override
 	public void run() {
-	  threadName = Thread.currentThread().getName();
-	  currentThreadNum = threadIndex;
+		threadName = Thread.currentThread().getName();
+		currentThreadNum = threadIndex;
 
-	  int blockSize = (int) Math.ceil(readArray.length / threadNum);
-	  startIndex = currentThreadNum * blockSize;
-	  if (threadNum - 1 == currentThreadNum) {
+		int blockSize = (int) Math.ceil(readArray.length / threadNum);
+		startIndex = currentThreadNum * blockSize;
+		if (threadNum - 1 == currentThreadNum) {
 			endIndex = readArray.length;
-	  } else {
+		} else {
 			endIndex = (currentThreadNum + 1) * blockSize;
-	  }
+		}
 
-	  // Rank sort
-	  for (int j = startIndex; j < endIndex; j++) {
+		// Rank sort
+		for (int j = startIndex; j < endIndex; j++) {
 			currentItem = readArray[j];
 			currentPosition = 0;
 			for (int i = 0; i < readArray.length; i++) {
@@ -52,7 +51,7 @@
 				}
 			}
 			resultArray[currentPosition] = currentItem;
-	  }
+		}
 
 	}
 
