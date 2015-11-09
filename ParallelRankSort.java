@@ -91,5 +91,5 @@ class ParallelRankSort {
 		// Print duration
 		System.out.println("Duration: " + elapsedTimeSec + "s");
 
-  }
+	}
 }
