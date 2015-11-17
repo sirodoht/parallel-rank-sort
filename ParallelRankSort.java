@@ -56,11 +56,11 @@ class ParallelRankSort {
 		long start = System.currentTimeMillis();
 
 		// Calculate blocks of operation for threads
-		int divNum = elemQuantity / threadNum;
+		int blockSize = elemQuantity / threadNum;
 
 		// Start threads
 		ParallelRankThread threads[] = new ParallelRankThread[threadNum];
-		for(int i = 0, j = 0; i < threadNum; i++, j += divNum) {
+		for(int i = 0, j = 0; i < threadNum; i++, j += blockSize) {
 			threads[i] = new ParallelRankThread(readArray, resultArray, threadNum, i);
 			threads[i].start();
 		}
